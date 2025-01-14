@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::362708816803:role/<DestinationBucket>"
+      },
+      "Action": [
+        "s3:ObjectOwnerOverrideToBucketOwner",
+        "s3:ReplicateObject",
+        "s3:ReplicateDelete",
+        "s3:ReplicateTags"
+      ],
+      "Resource": "arn:aws:s3:::<SourceBucket>/*"
+    }
+  ]
+}
